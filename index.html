@@ -1,23 +1,61 @@
-<html>
+<!-- HTML 5 DOCTYPE -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>
-      Movie vs Movie
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!-- WEB SITE TITLE -->
+    <title>Movie Vs Movie</title>
+    <!-- ADDITION OF CSS HERE -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
-  </head>
-  <body>
-        <div id="outer-wrapper">
-            <div class="movie-poster-one-bg">
+    <!-- 
+        ADDITION OF EXTERNAL JS FILES 
+        Need to call Jquery first before we call any of our scripits, or they won't run
+        WE will pull in a cdn of jquery, that way we always have the latest version.(Need access to internet for this to work.)
+    -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <!-- ADDITION OF LOCAL JS FILES -->
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <!-- Create an outer wrapper to hold everything -->
+    <div id="outer-wrapper">
+      
+     <div class="movie-left-container">
+            <div id="mOne" class="mp">
+                    <div class="movie-poster" id="poster-left">
+           
+                         </div>
               
             </div>
-            <div id="vs">
-              <img src="img/vs.png" alt="vs">
-            </div>
-            <div class="movie-poster-two-bg">
+        <!-- Create an empty div for our left side -->
+        <div class="movie-left">
+        <!-- Create an empty div to hold some content  -->
+          
+          </div>
+        </div>
+        <div class="vs"></div>
+           <div class="movie-right-container">
+            <div id="mOne" class="mp">
+                    <div class="movie-poster" id="poster-right">
+           
+                         </div>
               
             </div>
-            
+        <!-- Create an empty div for our right side. -->
+        <div class="movie-right">
+           <!-- Create an empty div to hold some content  -->
+            <div id="mTwo" class="mp">
             </div>
         </div>
-  </body>
-  </html>
+
+        <div class="generate-btn hvr-fade">
+            <h1>CLICK ME</h1>
+        </div>
+    </div>
+</body>
+</html>

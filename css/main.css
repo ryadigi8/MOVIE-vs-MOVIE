@@ -1,62 +1,114 @@
-@import url('reset.css');
-
-#outer-wrapper{
-  display:flex;
-  flex-flow:row wrap;
-  width:100vw;
+/* Import CSS file from external file */
+@import url(reset.css);
+@import url(hover.css);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+body {
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+}
+#outer-wrapper {
+    width:100vw;
+    height:100vh;
+    background-color:black;
+    position:relative;
+}
+.movie-left-container{
+  width:50vw;
   height:100vh;
-  margin:0 auto;
-/*   border:1px solid black; */
-  align-content:center;
-  justify-content:center;
-/*   padding:10px; */
-  background-color:green;
+  float:left;
+}
+.movie-right-container{
+  width:50vw;
+  height:100vh;
+  float:right;
+}
+.movie-left{
+    /* Set the initial width to zero so we have something that can grow */
+    width:0vw;
+    height: 100vh;
+    float: left;
+    background-color: yellow;
 }
 
-#vs {
-  width:200px;
-  height:200px;
-  position: absolute;
-  top: 50%;
-  left:50%;
-/*   border:1px solid black; */
-  margin:-70px 0 0 -170px;
+.movie-right{
+     /* Set the initial width to zero so we have something that can grow */
+    width:0vw;
+    height: 100vh;
+    float: right;
+    background-color: orange;
+}
+
+.slide-in-left {
+    /* Create animation Classes that we can add onto our elements */
+    animation-name:slide-left;
+     /* Give the animations a duration */
+     animation-duration: 1s;
+     /* Use this to make sure the animation stops at the end */
+     animation-fill-mode: forwards;
+}
+
+.slide-in-right {
+     /* Create animation Classes that we can add onto our elements */
+     /* Give the animations a name */
+    animation-name:slide-right;
+     /* Give the animations a duration */
+    animation-duration: 1s;
+    /* Use this to make sure the animation stops at the end */
+    animation-fill-mode: forwards;
+    
+}
+
+.mp {
+  position:relative;
+  z-index: 1;
+}
+
+.movie-p {
+  width:300px;
+  height:500px;
+  background-color:red;
+}
+
+/* Lets create a Movie Poster Div here to hold all the content  */
+
+.movie-poster{
+  width:320px;
+  margin: 0 auto;
   z-index:100;
-  align-self:center;
-  
-  animation-name:rotate;
-  animation-duration:1s;
-  animation-timing-function:ease-in;
-  animation-iteration-count:infinite;
   
 }
-
-@keyframes rotate {
-  0% {transform: rotate(0deg);}
-  50%{transform: rotate(7deg);}
-}
-
-.movie-poster-one-bg{
-  width:50vw;
-  height:100vh;
-/*   border:1px solid black; */
-/*   margin:5px 5px 5px 5px; */
-  background-color:orange;
-}
-.movie-poster-two-bg{
-  width:50vw;
-  height:100vh;
-/*   border:1px solid black; */
-/*   margin:5px 5px 5px 5px; */
-  background-color:yellow;
+.movie-post{
+  margin-top:48%;
 }
 
 
-#random-btn{
- background-color:green;
-  width:200px;
-  height:50px;
-  border-radius:20px;
- line-height:50px;
- margin:50px;
+
+/* We will setup two IDs here for the different movies and apply positioning here.  */
+
+
+.generate-btn {
+    width:190px;
+    height:60px;
+    border: 2px solid white;
+    background-color: black;
+    filter: opacity(.75);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100px;
+    line-height: 60px;
+    color:white;
+    text-align: center;
+    margin: -70px 0 0 -100px;
+}
+
+@keyframes slide-left {
+    0% {width:0vw;}
+    100%{width:50vw;}
+}
+
+
+@keyframes slide-right {
+    0% {width:0vw;}
+    100%{width:50vw;}
 }
